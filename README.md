@@ -47,3 +47,16 @@ O formulario ja envia ao Analytics o evento `generate_lead` quando uma pessoa re
 O formulário foi configurado para enviar as respostas para `eduardo.emilio.gomes@gmail.com` por meio do FormSubmit.
 
 Na primeira submissão, o FormSubmit enviará uma mensagem de ativação para esse endereço. É necessário abrir esse e-mail e confirmar o formulário. Depois da confirmação, as próximas respostas serão encaminhadas normalmente.
+
+
+## Correcao do envio por e-mail
+
+O formulario agora usa o envio HTML direto recomendado pelo FormSubmit, sem AJAX.
+
+1. Publique os quatro arquivos atualizados.
+2. Abra o site publicado e envie uma resposta de teste.
+3. Procure na caixa de entrada, Spam e Promocoes por uma mensagem do FormSubmit.
+4. Clique no botao de ativacao.
+5. Envie o formulario novamente; a segunda resposta deve chegar normalmente.
+
+O primeiro envio serve para ativar o endereco e pode nao conter a resposta como um e-mail comum.
