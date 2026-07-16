@@ -3,8 +3,23 @@ const success = document.getElementById('formSuccess');
 const errorMessage = document.getElementById('formError');
 const counter = document.getElementById('interestCount');
 const year = document.getElementById('year');
+const anonymousCheckbox = document.getElementById('anonymousSubmission');
+const nameInput = form.elements.namedItem('nome');
+const contactInput = form.elements.namedItem('contato');
 
 year.textContent = new Date().getFullYear();
+
+function updateAnonymousFields() {
+  const anonymous = anonymousCheckbox.checked;
+  [nameInput, contactInput].forEach((field) => {
+    field.required = !anonymous;
+    field.disabled = anonymous;
+    if (anonymous) field.value = '';
+  });
+}
+
+anonymousCheckbox.addEventListener('change', updateAnonymousFields);
+updateAnonymousFields();
 
 function getLeads() {
   try {

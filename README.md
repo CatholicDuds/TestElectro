@@ -60,3 +60,8 @@ O formulario agora usa o envio HTML direto recomendado pelo FormSubmit, sem AJAX
 5. Envie o formulario novamente; a segunda resposta deve chegar normalmente.
 
 O primeiro envio serve para ativar o endereco e pode nao conter a resposta como um e-mail comum.
+
+
+## Sugestões anônimas
+
+O formulário possui a opção **Enviar anonimamente**. Quando marcada, os campos de nome e contato são desativados e não são enviados. Os demais campos continuam funcionando normalmente.
