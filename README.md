@@ -40,3 +40,10 @@ Também é recomendável instalar Google Analytics, Microsoft Clarity ou Plausib
 5. Publique o site novamente.
 
 O formulario ja envia ao Analytics o evento `generate_lead` quando uma pessoa registra interesse.
+
+
+## Envio das respostas por e-mail
+
+O formulário foi configurado para enviar as respostas para `eduardo.emilio.gomes@gmail.com` por meio do FormSubmit.
+
+Na primeira submissão, o FormSubmit enviará uma mensagem de ativação para esse endereço. É necessário abrir esse e-mail e confirmar o formulário. Depois da confirmação, as próximas respostas serão encaminhadas normalmente.

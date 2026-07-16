@@ -139,7 +139,7 @@
           </ul>
         </div>
 
-        <form id="interestForm" class="interest-form">
+        <form id="interestForm" class="interest-form" novalidate>
           <label>
             Nome
             <input type="text" name="nome" placeholder="Seu nome" required />
@@ -174,9 +174,12 @@
             </select>
           </label>
           <button class="button button-full" type="submit">Responder à pesquisa</button>
-          <p class="form-note">Ao enviar, seus dados ficam salvos apenas neste navegador nesta versão de demonstração.</p>
+          <p class="form-note">Ao enviar, sua resposta será encaminhada por e-mail para a equipe da MakerJá.</p>
           <div id="formSuccess" class="success-message" role="status" hidden>
-            Resposta registrada! Obrigado por ajudar a validar a ideia.
+            Resposta enviada! Obrigado pelo interesse.
+          </div>
+          <div id="formError" class="error-message" role="alert" hidden>
+            Não foi possível enviar agora. Verifique sua conexão e tente novamente.
           </div>
         </form>
       </div>
