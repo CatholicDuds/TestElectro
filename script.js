@@ -7,8 +7,9 @@ const anonymousCheckbox = document.getElementById('anonymousSubmission');
 const nameInput = form.elements.namedItem('nome');
 const contactInput = form.elements.namedItem('contato');
 const interestButtons = document.querySelectorAll('[data-interest-cta]');
-const counterEndpoint = 'https://api.counterapi.dev/v1/makerja-campo-largo/interesse-cliques';
-const interestClickKey = 'makerja_interest_click_registered';
+const counterEndpoint = 'https://tick.rs/g/mkjcl_9f7a2c_interesse.json';
+const counterIncrementEndpoint = 'https://tick.rs/g+/mkjcl_9f7a2c_interesse.json';
+const interestClickKey = 'makerja_interest_click_registered_v2';
 const interestCountCacheKey = 'makerja_interest_count_cache';
 
 let counterRequestInFlight = false;
@@ -48,8 +49,8 @@ function displayInterestCount(value) {
   localStorage.setItem(interestCountCacheKey, String(Math.floor(normalizedValue)));
 }
 
-async function requestInterestCount(action = '') {
-  const response = await fetch(`${counterEndpoint}${action}`, {
+async function requestInterestCount(increment = false) {
+  const response = await fetch(increment ? counterIncrementEndpoint : counterEndpoint, {
     method: 'GET',
     cache: 'no-store',
     headers: { Accept: 'application/json' }
@@ -57,8 +58,10 @@ async function requestInterestCount(action = '') {
 
   if (!response.ok) throw new Error(`Falha ao consultar contador: ${response.status}`);
 
-  const result = await response.json();
-  return result.count;
+  const result = Number(await response.text());
+  if (!Number.isFinite(result)) throw new Error('Resposta inválida do contador');
+
+  return result;
 }
 
 async function loadInterestCount() {
@@ -78,7 +81,7 @@ async function registerInterestClick() {
   counterRequestInFlight = true;
 
   try {
-    const updatedCount = await requestInterestCount('/up');
+    const updatedCount = await requestInterestCount(true);
     localStorage.setItem(interestClickKey, '1');
     displayInterestCount(updatedCount);
   } catch {
