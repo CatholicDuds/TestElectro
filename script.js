@@ -33,10 +33,10 @@ function updateCounter() {
   counter.textContent = getLeads().length;
 }
 
-// Exibe confirmação ao voltar do FormSubmit.
 const params = new URLSearchParams(window.location.search);
 if (params.get('enviado') === '1') {
   success.hidden = false;
+  form.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 form.addEventListener('submit', () => {
