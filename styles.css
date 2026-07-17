@@ -653,14 +653,3 @@ footer {
     align-items: flex-start;
   }
 }
-
-.instagram-icon-image {
-  width: 19px;
-  height: 19px;
-  object-fit: contain;
-  flex: 0 0 auto;
-}
-.instagram-button-small .instagram-icon-image {
-  width: 17px;
-  height: 17px;
-}
