@@ -151,6 +151,50 @@ nav a:hover::after { width: 100%; }
   background: #f8f7ff;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.instagram-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #833ab4 0%, #c13584 42%, #e1306c 72%, #f77737 100%);
+  color: #fff;
+  padding: 13px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(193,53,132,0.24);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.instagram-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(193,53,132,0.32);
+  filter: saturate(1.08);
+}
+
+.instagram-button:focus-visible {
+  outline: 3px solid rgba(225,48,108,0.28);
+  outline-offset: 3px;
+}
+
+.instagram-button-small {
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.instagram-button-hero {
+  border-color: rgba(255,255,255,0.26);
+  box-shadow: 0 12px 26px rgba(20,8,74,0.24);
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -652,4 +696,16 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.instagram-icon-image {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.instagram-button-small .instagram-icon-image {
+  width: 17px;
+  height: 17px;
 }
