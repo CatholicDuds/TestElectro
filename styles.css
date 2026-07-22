@@ -160,8 +160,10 @@ nav a:hover::after { width: 100%; }
   box-shadow:
     0 14px 30px rgba(164,219,0,0.34),
     0 0 0 5px rgba(216,255,85,0.10);
-  font-size: 16px;
-  padding-inline: 26px;
+  min-height: 60px;
+  padding: 17px 34px;
+  border-radius: 17px;
+  font-size: 18px;
   animation: hero-cta-pulse 2.8s ease-in-out infinite;
 }
 
