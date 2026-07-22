@@ -333,10 +333,18 @@ nav a:hover::after { width: 100%; }
   font-weight: 700;
 }
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  width: min(100%, 500px);
   margin-bottom: 28px;
+}
+.hero-actions > a {
+  width: 100%;
+  min-width: 0;
+}
+.hero-actions .button-primary-hero {
+  grid-column: 1 / -1;
 }
 .trust-row {
   display: flex;
@@ -758,6 +766,16 @@ footer {
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button-primary-hero {
+    grid-column: auto;
   }
 }
 
